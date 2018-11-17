@@ -38,13 +38,16 @@ Saving the seed file allows for deterministic reproductions.
 
 ## Constraints
 
-You can put extra constraints in `constraints.txt`, specifying which edges in
-the bipartite graph corresponding to the permutation are *not* allowed, indexed
-by year (because, who knows). Example:
+You can put extra constraints in `assignment.txt`, specifying which edges in
+the permuation graph are *not* allowed. Example:
 
 ```
-(1999, "Bert", "Ernie")
+("Bert", "Ernie")
 ```
 
-This specifies that in 1999, Bert had to gift Ernie and makes sure that in i.e.
-2000 he won't have to wichtel Ernie again.
+This specifies that Bert doesn't want to gift Ernie and makes sure that he won't
+have to wichtel Ernie again.
+
+Note that after a run, this file gets overwritten with the new assignment, so
+that there won't be any similar assignments as the result of consecutive runs of
+the script.
