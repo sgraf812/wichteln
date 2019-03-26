@@ -31,7 +31,7 @@ writeUTF8File p contents = withFile p WriteMode $ \h -> do
   hPutStr h contents
 
 parseNames :: [String] -> IO [String]
-parseNames []    = words <$> readUTF8File "names.txt"
+parseNames []    = lines <$> readUTF8File "names.txt"
 parseNames names = pure names
 
 seedFile :: FilePath
